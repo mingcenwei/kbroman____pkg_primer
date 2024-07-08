@@ -44,7 +44,7 @@ An important thing to remember: **don't use a
 software**. Creative Commons licenses (like [CC-BY](https://creativecommons.org/licenses/by/3.0/))
 are great, but they're for things like articles, books, and
 videos, **but not software**. As
-[they say in their FAQ](https://wiki.creativecommons.org/FAQ#Can_I_use_a_Creative_Commons_license_for_software.3F):
+[they say in their FAQ](https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software):
 
 > We recommend against using Creative Commons licenses for software.
 
