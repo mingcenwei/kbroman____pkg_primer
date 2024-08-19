@@ -57,12 +57,7 @@ for your software.
 domain) seems appropriate for software: you're just saying that anyone
 can do anything with the code.
 
-But in some states (e.g., Maryland, I think), software is treated as a
-&ldquo;good&rdquo; (like a car), and so if your code causes something
-terrible to happen, you could be sued for damages. Using a lenient
-license, like the
-[Apache-2.0 license](https://www.apache.org/licenses/LICENSE-2.0), eliminates
-that potential problem through the &ldquo;no warranty&rdquo; clause.
+However, CC0 does not address [patent issues](https://www.gnu.org/licenses/license-list.en.html#CC0), meaning it does not protect users from patent trolling.
 
 So, use [CC0](https://creativecommons.org/publicdomain/zero/1.0/) for
 your lecture notes, slides, and web sites, but use a lenient license,
