@@ -28,13 +28,13 @@ all really boring to read is another part of the pain. The
 [WTFPL](http://www.wtfpl.net/) is one of the few that is not boring.)
 
 Personally, I choose between the
-[MIT license](https://en.wikipedia.org/wiki/MIT_License) and the
+[Apache-2.0 license](https://www.apache.org/licenses/LICENSE-2.0) and the
 [GNU General Public License (GPL)](https://www.gnu.org/copyleft/gpl.html). The
-MIT license is among the more permissive. The GPL is
+Apache-2.0 license is among the more permissive. The GPL is
 &ldquo;viral&rdquo; in that it extends to derivative works: software
 that incorporates code that was licensed under the GPL must also be
 licensed under the GPL. So I use the GPL _if I have to_ (that is, if
-I've incorporated others' GPL code), and I use the MIT license
+I've incorporated others' GPL code), and I use the Apache-2.0 license
 otherwise.
 
 ### Don't use a Creative Commons license for software
@@ -61,12 +61,12 @@ But in some states (e.g., Maryland, I think), software is treated as a
 &ldquo;good&rdquo; (like a car), and so if your code causes something
 terrible to happen, you could be sued for damages. Using a lenient
 license, like the
-[MIT license](https://en.wikipedia.org/wiki/MIT_License), eliminates
+[Apache-2.0 license](https://www.apache.org/licenses/LICENSE-2.0), eliminates
 that potential problem through the &ldquo;no warranty&rdquo; clause.
 
 So, use [CC0](https://creativecommons.org/publicdomain/zero/1.0/) for
 your lecture notes, slides, and web sites, but use a lenient license,
-like the [MIT license](https://en.wikipedia.org/wiki/MIT_License), for
+like the [Apache-2.0 license](https://www.apache.org/licenses/LICENSE-2.0), for
 your software.
 
 ### Indicating your choice in your package
@@ -87,51 +87,43 @@ your `DESCRIPTION` file.
 
     License: GPL-3
 
-That's it.
+If you also want to license your package under future versions of the GPL license, which is generally considered [good practice](https://usethis.r-lib.org/reference/licenses.html#arg-include-futured) because 'your package will automatically include "bug" fixes in licenses', you should include the following line in your `DESCRIPTION` file instead.
 
-#### MIT license
+    License: GPL (>= 3)
+
+#### Apache-2.0 license
 
 If you're not incorporating code that is licensed under the GPL, I
-recommend going with the MIT license.
+recommend going with the Apache-2.0 license.
 
-Unfortunately, and for reasons that I don't understand, the R Core
-considers the MIT license to be not a proper license but rather a
-_template_ for a license. And so if you want to use the MIT license,
-you must include a `LICENSE` file in your package that includes just
-two lines,
-like this ([example here](https://github.com/kbroman/pkg_primer/tree/gh-pages/example/stage5/LICENSE)):
+To use the Apache-2.0 license with your R package, include the following line in
+your `DESCRIPTION` file.
 
-    YEAR: 2014
-    COPYRIGHT HOLDER: Karl W Broman
+    License: Apache License (== 2)
 
-See the license template at <https://www.r-project.org/Licenses/MIT>.
+If you also want to license your package under future versions of the Apache license, which is generally considered [good practice](https://usethis.r-lib.org/reference/licenses.html#arg-include-futured) because 'your package will automatically include "bug" fixes in licenses', you should include the following line in your `DESCRIPTION` file instead.
 
-Then, in your `DESCRIPTION` file, include the following line.
+    License: Apache License (>= 2)
 
-    License: MIT + file LICENSE
+### Including a copy of the license in your package source code
 
-The all caps `LICENSE` in that line is the name of the file (within
-your package) with the text about year and copyright holder. You can
-also call the file `LICENCE` if you want. In this case, the relevant
-line in your `DESCRIPTION` file should be the following.
+You must include a copy of your chosen license in your package source code. However, since CRAN prohibits the inclusion of standard licenses within packages, [you should save your license as `LICENSE.md` and add it to `.Rbuildignore`](https://usethis.r-lib.org/reference/licenses.html#details) to prevent the file from being sent to CRAN. For example, if you choose to use the Apache-2.0 license, you should include a `LICENSE.md` file like [this example](https://github.com/kbroman/pkg_primer/tree/gh-pages/example/stage5/LICENSE.md), and create a `.Rbuildignore` file like [this example](https://github.com/kbroman/pkg_primer/tree/gh-pages/example/stage5/.Rbuildignore).
 
-    License: MIT + file LICENCE
-
-(I'd thought that you could use a different name for the file, for
-example `License.txt`, but the
-[Writing R Extensions manual](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Licensing)
-seems pretty explicit that the file should be either `LICENSE` or
-`LICENCE`.)
-
-With this, our package looks
+With these changes, our package looks
 [like this](https://github.com/kbroman/pkg_primer/tree/gh-pages/example/stage5),
 and it is now a _proper R package_.
+
+### Modern way of licensing a package
+
+This process may seem tedious, but specific packages have been developed to streamline it. You can install the [`usethis`](https://usethis.r-lib.org/index.html) package and use its [functions](https://usethis.r-lib.org/reference/licenses.html) to automatically update your `DESCRIPTION`, `.Rbuildignore`, and `LICENSE.md` files. For example, if you want to license your package under the Apache-2.0 license and allow for future versions, simply run the following command in your package directory.
+
+    usethis::use_apache_license(version = 2, include_future = TRUE)
 
 ---
 
 ### Homework
 
-Pick a license for your software, make the appropriate change to your
-`DESCRIPTION` file, and if necessary add a `LICENSE` file.
+Pick a license for your software, make the appropriate changes to your
+`DESCRIPTION` and `.Rbuildignore` files, and add a `LICENSE.md` file.
 
 Then go to the page about [checking an R package](check.html).
