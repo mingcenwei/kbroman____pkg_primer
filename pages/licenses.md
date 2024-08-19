@@ -87,7 +87,7 @@ your `DESCRIPTION` file.
 
     License: GPL-3
 
-If you also want to license your package under future versions of the GPL license, which is generally considered [good practice](https://usethis.r-lib.org/reference/licenses.html#arg-include-futured) because 'your package will automatically include "bug" fixes in licenses', you should include the following line in your `DESCRIPTION` file instead.
+If you also want to license your package under future versions of the GPL license, which is generally considered [good practice](https://usethis.r-lib.org/reference/licenses.html#arg-include-future) because 'your package will automatically include "bug" fixes in licenses', you should include the following line in your `DESCRIPTION` file instead.
 
     License: GPL (>= 3)
 
@@ -101,7 +101,7 @@ your `DESCRIPTION` file.
 
     License: Apache License (== 2)
 
-If you also want to license your package under future versions of the Apache license, which is generally considered [good practice](https://usethis.r-lib.org/reference/licenses.html#arg-include-futured) because 'your package will automatically include "bug" fixes in licenses', you should include the following line in your `DESCRIPTION` file instead.
+If you also want to license your package under future versions of the Apache license, which is generally considered [good practice](https://usethis.r-lib.org/reference/licenses.html#arg-include-future) because 'your package will automatically include "bug" fixes in licenses', you should include the following line in your `DESCRIPTION` file instead.
 
     License: Apache License (>= 2)
 
